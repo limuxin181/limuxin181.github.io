@@ -1,0 +1,324 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0514;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Glassmorphism Utilities */
+.glass-nav {
+    background: rgba(10, 5, 20, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    color: #9ca3af;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #fff;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #00f3ff;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+    box-shadow: 0 0 10px #00f3ff;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Planet Background */
+.planet-bg {
+    background: url('/images/planet.png') no-repeat center center;
+    background-size: cover;
+    box-shadow: 0 0 100px rgba(0, 243, 255, 0.2), inset -50px -50px 100px rgba(0,0,0,0.8);
+    filter: brightness(0.8) contrast(1.2);
+    mix-blend-mode: screen;
+}
+
+/* Stars */
+.star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkle infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 5px #fff; }
+}
+
+/* Timeline */
+#internship .is-active .glass-card {
+    border-color: rgba(0, 243, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+}
+
+/* Custom Sci-fi Animations */
+@keyframes scan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(1000%);
+    }
+}
+.animate-scan {
+    animation: scan 2s linear infinite;
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+}
+
+/* Custom Scrollbar for Awards List */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(176, 38, 255, 0.3);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(176, 38, 255, 0.5);
+}
+
+.award-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(5px);
+}
+
+/* =========================
+   Campus 3D Carousel
+========================= */
+
+.campus-carousel {
+  position: relative;
+  width: min(100%, 980px);
+  height: 430px;
+  perspective: 1600px;
+  transform-style: preserve-3d;
+}
+
+.campus-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 310px;
+  height: 390px;
+  border-radius: 24px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%);
+  transition:
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.75s ease,
+    filter 0.75s ease,
+    box-shadow 0.75s ease;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
+}
+
+.campus-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 图片底部暗色渐变 */
+.campus-card-mask {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05) 35%,
+      rgba(0, 0, 0, 0.78) 100%
+    );
+  pointer-events: none;
+}
+
+/* 文字 */
+.campus-card-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 24px;
+  text-align: center;
+  z-index: 3;
+}
+
+.campus-card-text h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.campus-card-text p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* 中间主卡片 */
+.campus-card.active {
+  z-index: 5;
+  opacity: 1;
+  filter: brightness(1) saturate(1.08);
+  transform: translate(-50%, -50%) translateX(0) translateZ(160px) rotateY(0deg) scale(1.08);
+  box-shadow:
+    0 36px 110px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(189, 0, 255, 0.22);
+}
+
+/* 左右第一层 */
+.campus-card.prev-1 {
+  z-index: 4;
+  opacity: 0.72;
+  filter: brightness(0.55) grayscale(0.55);
+  transform: translate(-50%, -50%) translateX(-230px) translateZ(40px) rotateY(26deg) rotateZ(-8deg) scale(0.92);
+}
+
+.campus-card.next-1 {
+  z-index: 4;
+  opacity: 0.72;
+  filter: brightness(0.55) grayscale(0.55);
+  transform: translate(-50%, -50%) translateX(230px) translateZ(40px) rotateY(-26deg) rotateZ(8deg) scale(0.92);
+}
+
+/* 左右第二层 */
+.campus-card.prev-2 {
+  z-index: 3;
+  opacity: 0.38;
+  filter: brightness(0.38) grayscale(0.85);
+  transform: translate(-50%, -50%) translateX(-410px) translateZ(-120px) rotateY(42deg) rotateZ(-14deg) scale(0.78);
+}
+
+.campus-card.next-2 {
+  z-index: 3;
+  opacity: 0.38;
+  filter: brightness(0.38) grayscale(0.85);
+  transform: translate(-50%, -50%) translateX(410px) translateZ(-120px) rotateY(-42deg) rotateZ(14deg) scale(0.78);
+}
+
+/* 隐藏状态 */
+.campus-card.hidden-card {
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.6);
+}
+
+/* 底部圆点 */
+.campus-dots {
+  display: flex;
+  gap: 10px;
+  margin-top: 42px;
+  justify-content: center;
+  align-items: center;
+}
+
+.campus-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.campus-dot.active {
+  width: 28px;
+  background: linear-gradient(90deg, #00f3ff, #bd00ff);
+  box-shadow: 0 0 18px rgba(0, 243, 255, 0.45);
+}
+
+/* 鼠标经过主卡片时微微前移 */
+.campus-card.active:hover {
+  transform: translate(-50%, -50%) translateX(0) translateZ(190px) rotateY(0deg) scale(1.11);
+}
+
+/* 手机适配 */
+@media (max-width: 768px) {
+  .campus-carousel {
+    height: 390px;
+    width: 100%;
+  }
+
+  .campus-card {
+    width: 260px;
+    height: 340px;
+  }
+
+  .campus-card.prev-1 {
+    transform: translate(-50%, -50%) translateX(-150px) translateZ(0) rotateY(24deg) rotateZ(-8deg) scale(0.82);
+  }
+
+  .campus-card.next-1 {
+    transform: translate(-50%, -50%) translateX(150px) translateZ(0) rotateY(-24deg) rotateZ(8deg) scale(0.82);
+  }
+
+  .campus-card.prev-2,
+  .campus-card.next-2 {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>作品详情 - Li Junjie</title>
+</head>
+
+<body class="bg-[#0f1115] text-white overflow-x-hidden pt-24">
+  
+  <!-- 全宽固定顶部导航栏 -->
+  <header class="fixed top-0 left-0 right-0 h-20 bg-[#0A0A0A] border-b border-white/5 z-[100] flex items-center px-6 lg:px-12">
+    <a 
+      href="/"
+      class="flex items-center gap-4 group"
+      title="返回首页"
+    >
+      <!-- 返回箭头图标 (实心深灰圆底) -->
+      <div class="w-10 h-10 rounded-full bg-[#1A1A1A] flex items-center justify-center transition-colors group-hover:bg-[#2A2A2A]">
+        <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </div>
+      <!-- 标题信息区 -->
+      <div class="flex flex-col">
+        <span class="text-white font-bold text-base tracking-wide" id="header-title">赛博打工人</span>
+        <span class="text-gray-500 text-[10px] font-mono uppercase tracking-widest mt-0.5" id="header-subtitle">WORK / 2024-2025</span>
+      </div>
+    </a>
+  </header>
+
+  <main class="relative z-10 min-h-screen px-6 py-10 lg:px-20">
+    
+    <!-- 图片展示区 -->
+    <section 
+      id="project-gallery" 
+      class="max-w-6xl mx-auto flex flex-col gap-8 pb-24"
+    ></section>
+
+  </main>
+
+  <script type="module" src="/src/detail.js"></script>
+</body>
+</html>
