@@ -43,19 +43,85 @@
         
         <!-- Home Section -->
         <section id="home" class="min-h-screen flex flex-col justify-center items-center px-6 pt-20">
-            <div class="max-w-4xl w-full text-center space-y-8">
-                <h1 class="text-5xl md:text-7xl font-bold tracking-tight">
-                    HELLO I AM <br/>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple drop-shadow-[0_0_15px_rgba(0,243,255,0.5)]">
-                        LI JUNJIE
-                    </span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-300 font-light tracking-widest">
-                    这 里 是 · 独 属 于 我 的 · 星 球
-                </p>
+            <div class="home-shell w-full space-y-8">
+                <div class="home-hero-layout">
+                    <div class="home-hero-copy">
+                        <h1 class="home-hero-title text-5xl md:text-7xl font-bold tracking-tight">
+                            HELLO I AM <br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple drop-shadow-[0_0_15px_rgba(0,243,255,0.5)]">
+                                LI JUNJIE
+                            </span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-gray-300 font-light tracking-widest">
+                            这 里 是 · 独 属 于 我 的 · 星 球
+                        </p>
+                    </div>
                 
+                    <!-- Interactive 3D software orbit -->
+                    <div class="hero-orbit" id="hero-orbit" aria-label="交互式设计软件轨道">
+                        <div class="orbit-ambient orbit-ambient--one"></div>
+                        <div class="orbit-ambient orbit-ambient--two"></div>
+                        <div class="orbit-path orbit-path--back" aria-hidden="true"></div>
+
+                    <div class="orbit-character-wrap">
+                        <img
+                            class="orbit-character"
+                            src="/images/assets/hero-character.png"
+                            alt="李俊杰个人形象"
+                            draggable="false"
+                        >
+                    </div>
+
+                    <div class="orbit-icons">
+                        <button class="orbit-icon orbit-icon--figma" type="button" data-name="Figma" aria-label="聚焦 Figma">
+                            <img class="orbit-logo-image" src="/images/assets/figma-3d.png" alt="" draggable="false">
+                            <span class="orbit-icon-name">Figma</span>
+                        </button>
+                        <button class="orbit-icon orbit-icon--photoshop" type="button" data-name="Photoshop" aria-label="聚焦 Photoshop">
+                            <img class="orbit-logo-image" src="/images/assets/photoshop-3d.png" alt="" draggable="false">
+                            <span class="orbit-icon-name">Photoshop</span>
+                        </button>
+                        <button class="orbit-icon orbit-icon--illustrator" type="button" data-name="Illustrator" aria-label="聚焦 Illustrator">
+                            <img class="orbit-logo-image" src="/images/assets/illustrator-3d.png" alt="" draggable="false">
+                            <span class="orbit-icon-name">Illustrator</span>
+                        </button>
+                        <button class="orbit-icon orbit-icon--after-effects" type="button" data-name="After Effects" aria-label="聚焦 After Effects">
+                            <img class="orbit-logo-image" src="/images/assets/after-effects-3d.png" alt="" draggable="false">
+                            <span class="orbit-icon-name">After Effects</span>
+                        </button>
+                        <button class="orbit-icon orbit-icon--trae" type="button" data-name="Trae" aria-label="聚焦 Trae">
+                            <img class="orbit-logo-image" src="/images/assets/霓虹玻璃Trae机器人图标.png" alt="" draggable="false">
+                            <span class="orbit-icon-name">Trae</span>
+                        </button>
+                        <button class="orbit-icon orbit-icon--cinema" type="button" data-name="Cinema 4D" aria-label="聚焦 Cinema 4D">
+                            <img class="orbit-logo-image" src="/images/assets/cinema-4d-3d.png" alt="" draggable="false">
+                            <span class="orbit-icon-name">Cinema 4D</span>
+                        </button>
+                        <button class="orbit-icon orbit-icon--chatgpt" type="button" data-name="ChatGPT" aria-label="聚焦 ChatGPT">
+                            <img class="orbit-logo-image" src="/images/assets/chatgpt-3d.png" alt="" draggable="false">
+                            <span class="orbit-icon-name">ChatGPT</span>
+                        </button>
+                        <button class="orbit-icon orbit-icon--midjourney" type="button" data-name="Midjourney" aria-label="聚焦 Midjourney">
+                            <img class="orbit-logo-image" src="/images/assets/midjourney-3d.png" alt="" draggable="false">
+                            <span class="orbit-icon-name">Midjourney</span>
+                        </button>
+                        <button class="orbit-icon orbit-icon--terminal" type="button" data-name="Terminal" aria-label="聚焦 Terminal">
+                            <img class="orbit-logo-image" src="/images/assets/terminal-3d..png" alt="" draggable="false">
+                            <span class="orbit-icon-name">Terminal</span>
+                        </button>
+                        <button class="orbit-icon orbit-icon--coze" type="button" data-name="Coze" aria-label="聚焦 Coze">
+                            <img class="orbit-logo-image" src="/images/assets/coze-3d.png" alt="" draggable="false">
+                            <span class="orbit-icon-name">Coze</span>
+                        </button>
+                    </div>
+
+                        <div class="orbit-path orbit-path--front" aria-hidden="true"></div>
+                        <p class="orbit-hint">点击图标 · 聚焦我的创作工具</p>
+                    </div>
+                </div>
+
                 <!-- Quick Navigation Tabs -->
-                <div class="flex flex-wrap justify-center gap-4 mt-12 relative z-20">
+                <div class="flex flex-wrap justify-center gap-4 relative z-20">
                     <button class="nav-link-btn group relative px-6 py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-neon-blue/50 hover:bg-white/10 transition-all duration-300" data-target="home">
                         <span class="relative z-10 text-sm tracking-wider">首页</span>
                     </button>
@@ -74,7 +140,7 @@
                 </div>
 
                 <!-- Quick Info Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 text-left">
+                <div class="home-info-grid grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 text-left">
                     <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
                         <h3 class="text-neon-blue text-sm font-semibold tracking-wider mb-2">教育背景</h3>
                         <p class="text-lg font-medium">南京理工大学</p>
