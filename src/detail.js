@@ -9,8 +9,8 @@ const projects = {
     images: [
       '/images/project-medicine/01.jpg',
       '/images/project-medicine/02.jpg',
-      '/images/project-medicine/03.jpg',
-      '/images/project-medicine/04.jpg',
+      '/images/project-medicine/03.jpg?v=20261025',
+      '/images/project-medicine/04.jpg?v=20261025',
     ],
   },
 
